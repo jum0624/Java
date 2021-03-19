@@ -321,3 +321,93 @@ public class Inheritance06 {
 
 오버로딩된 display() 메소드입니다.
 ```
+
+## 04 동적바인딩, 정적바인딩
+
+`동적 바인딩(Dynamic Binding)`
+
+- 다형성을 사용하여 메소드를 호출할 때, 발생하는 현상이다.
+
+- 실행 시간(Runtime) 즉, 파일을 실행하는 시점에 성격이 결정된다.
+
+- 실제 참조하는 객체는 서브 클래스이니 서브 클래스의 메소드를 호출한다.
+
+`정적 바인딩(Static Binding)`
+
+- 컴파일(Compile) 시간에 성격이 결정된다.
+
+- 변수의 타입이 수퍼 클래스이니 수퍼 클래스의 메소드를 호출한다.
+
+
+```Java
+public class PolymorphismTest {
+    public static void main(String[] args) {
+        SuperClass superClass = new SuperClass();
+        superClass.methodA();
+        superClass.methodB();
+
+
+        SuperClass subClass = new SubClass();
+        subClass.methodA();
+        subClass.methodB();
+    }
+}
+
+
+class SuperClass {
+    void methodA() {
+        System.out.println("SuperClass A ");
+    }
+
+    static void methodB() {
+        System.out.println("SuperClass B");
+    }
+}
+
+class SubClass extends SuperClass {
+    @Override
+    void methodA() {
+        System.out.println("SubClass A");
+    }
+
+    static void methodB() {
+        System.out.println("SubClass B");
+    }
+}
+```
+
+```Java
+// 예상 결과
+SuperClass A 
+SuperClass B
+SubClass A
+SubClass B
+
+// 실제 결과
+SuperClass A 
+SuperClass B
+SubClass A
+SuperClass B
+```
+
+> static은 정적, 그렇기 때문에 동적으로 따라가지 않고 정적바인딩으로 슈퍼클래스의 메소드가 출력됨.
+
+SubClass는 SuperClass의 methodA()를 상속받아 오버라이딩했다.
+
+methodA()가 어떤 클래스의 메소드인지 Runtime 즉, 클래스 파일이 실행되는 시점에 결정된다.
+
+다시 말해, 동적 바인딩은 Runtime 시점에 해당 메소드를 구현하고 있는 실제 객체 타입을 기준으로 찾아가서 실행될 함수를 호출한다.
+
+subClass 참조 변수로 접근 가능한 것은 부모 클래스의 멤버이지만, 자식 클래스에서 메소드를 오버라이딩했으므로 자식 클래스의 메소드를 호출한다.
+
+subClass 참조 변수는 런타임시에 SubClass의 methodA() 호출
+
+subClass 참조 변수는 컴파일시에 SuperClass의 static 메소드인 methodB() 호출
+
+> 결론
+
+모든 인스턴스 메소드는 Runtime에 결정된다.
+
+클래스(static) 메소드와 인스턴스 변수는 Compile 시에 결정된다.
+
+따라서 instance인지, statice인지에 따라서 달라진다.
