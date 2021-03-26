@@ -24,12 +24,15 @@ public class Song {
 		Scanner sc = new Scanner(System.in);
 		
 		int year = 0;
-		try {
-			year = sc.nextInt();
-		}
-		catch(InputMismatchException e) {
-			System.out.println("정수가 아닙니다. 다시입력하세요."); //발생연도 문자열 입력시 예외처리
-			sc.next();
+		while(true) {
+			try {
+				year = sc.nextInt();
+				break;
+			}
+			catch(InputMismatchException e) {
+				System.out.println("정수가 아닙니다. 다시입력하세요."); //발생연도 문자열 입력시 예외처리
+				sc.next();
+			}
 		}
 		String country = sc.next();
 		String artist = sc.next();
