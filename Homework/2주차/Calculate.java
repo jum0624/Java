@@ -46,7 +46,13 @@ public class Calculate {
 			}
 			
 			else if(Calc.equals("%")) {
-				System.out.println("결과: " + (number1%number2)); // 문자열 "&"일 경우 나머지연산
+				try {
+					System.out.println("결과: " + (number1%number2)); // 문자열 "&"일 경우 나머지연산
+				}
+				catch(ArithmeticException e){
+					System.out.println("0으로 나눌 수 없습니다. 다시입력하세요.");
+					// 나머지 연산자에서 0으로 계산할 경우 예외
+				}
 			}
 			else if(Calc.equals("=")) {
 				break; //"=" 을 만나면 while문 벗어남
