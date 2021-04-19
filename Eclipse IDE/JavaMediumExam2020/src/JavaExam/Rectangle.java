@@ -1,4 +1,4 @@
-package app;
+package JavaExam;
 
 class Rectangle implements Shape {
 	private Point a;

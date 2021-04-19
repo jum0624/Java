@@ -1,4 +1,4 @@
-package app;
+package JavaExam;
 public interface Shape {
 	double PI=3.14;
 	void draw();		//도형의 종류와 정보 출력

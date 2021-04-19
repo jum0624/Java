@@ -1,4 +1,4 @@
-package app;
+package JavaExam;
 
 public class Circle implements Shape {
 	private Point a;

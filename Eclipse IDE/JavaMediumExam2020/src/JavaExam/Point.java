@@ -1,4 +1,4 @@
-package app;
+package JavaExam;
 public class Point {
 	int x, y;
 	public Point() {//(0,0)

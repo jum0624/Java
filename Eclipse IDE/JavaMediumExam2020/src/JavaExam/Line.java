@@ -1,4 +1,4 @@
-package app;
+package JavaExam;
 import java.lang.Math;
 
 class Line implements Shape { 
