@@ -1,3 +1,4 @@
+package JavaStudy;
 import java.util.StringTokenizer;
 
 public class StringTokenizer3 {
@@ -9,14 +10,10 @@ public class StringTokenizer3 {
         while(st.hasMoreTokens()){
             String t=st.nextToken();
             if(t.equals("+")){
-                //st.nextToken();
                 sum += Integer.parseInt(st.nextToken());
-                System.out.println("+" + sum);
             }
             if(t.equals("-")){
-                //st.nextToken();
                 sum -= Integer.parseInt(st.nextToken());
-                System.out.println("-" + sum);
             }
         }
         System.out.println(sum);
