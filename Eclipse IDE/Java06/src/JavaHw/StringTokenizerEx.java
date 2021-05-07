@@ -18,7 +18,7 @@ public class StringTokenizerEx {
 		int sum = Integer.parseInt(v.elementAt(0));
 		//System.out.println("+:"+sum);
 		int i = 1;
-		while(i!=v.size()) {
+		while(i < v.size()) {
 			String n = v.elementAt(i);
 			if(n.equals("+")) {
 				sum += Integer.parseInt(v.elementAt(i+1));
@@ -28,10 +28,11 @@ public class StringTokenizerEx {
 				sum -= Integer.parseInt(v.elementAt(i+1));
 				//System.out.println("-:"+sum);
 			}
-			i++;
+			i+=2;
 		}
 		
 		System.out.println(sum);
 		sc.close();
+		//35+40-543-42+42-23
 	}
 }
