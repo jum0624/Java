@@ -28,7 +28,7 @@ public class StringTokenizerEx {
 				sum -= Integer.parseInt(v.elementAt(i+1));
 				//System.out.println("-:"+sum);
 			}
-			i+=2;
+			i += 2;
 		}
 		
 		System.out.println(sum);
