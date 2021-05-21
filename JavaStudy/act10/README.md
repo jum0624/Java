@@ -202,7 +202,7 @@ public class Main
 
 > 실행결과
 
-!BorderLayout 실행결과](https://t1.daumcdn.net/cfile/tistory/25FDD733596C4D5201)
+![BorderLayout 실행결과](https://t1.daumcdn.net/cfile/tistory/25FDD733596C4D5201)
 
 (3) GridLayout
 
